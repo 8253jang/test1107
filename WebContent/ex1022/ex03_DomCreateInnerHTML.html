@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+ div{background:pink; width: 400px; height: 300px}
+</style>
+<script type="text/javascript">
+
+index=0;
+function createEle(){
+  //<h3> 배고프다 </h3>
+	var divEle = document.getElementById("result");
+	
+	divEle.innerHTML +="<h3 id='a" +index+ "'>배고프다 index : " + index +" </h3><img src='../ex1019/img/cat.gif'>";
+	
+	index++;
+}
+
+function deleteEle(){
+	//DIV 태그 찾기
+	var divEle = document.getElementById("result");
+	
+	console.log("divEle = " + divEle);
+	console.log("divEle.parentNode = " + divEle.parentNode);
+	console.log("divEle.firstChild = " + divEle.firstChild);
+	console.log("divEle.lastChild = " + divEle.lastChild);
+	
+	console.log("divEle.parentNode.parentNode.firstChild = " + 
+			divEle.parentNode.parentNode.firstChild); 
+	
+	console.log("divEle.nextSibling = " + divEle.nextSibling);
+	console.log("divEle.previousSibling = " + divEle.previousSibling);
+	
+	//삭제 :   부모노드.removeChild(삭제대상)
+	
+	//1. div태그 첫번째 자식 삭제
+	//divEle.removeChild(divEle.firstChild);
+	
+	//2. div태그의 마지막 자식 삭제
+	//divEle.removeChild(divEle.lastChild);
+	
+	//3. h1태그 삭제
+	divEle.parentNode.removeChild(divEle.parentNode.firstChild);
+}
+
+ onload = function(){
+	 if(window.addEventListener){// IE9 이상 + chrome 
+		 document.getElementById("create").addEventListener("click", createEle, false);
+		 document.getElementById("delete").addEventListener("click", deleteEle, false);
+	 }else{ //IE8이하 
+		 document.getElementById("create").attachEvent("onclick" , createEle);
+		 document.getElementById("delete").attachEvent("onclick", deleteEle);
+	 }
+ }
+
+</script>
+</head>
+<body><h1>Dom 생성 및 삭제</h1><form>
+ <input type="button" value="생성하기" id="create"/>
+ <input type="button" value="삭제하기" id="delete"/>
+</form>
+<div id="result"></div>
+
+</body>
+</html>

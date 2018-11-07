@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+   function imgMove(){
+	   console.log(1);
+	 
+	  
+   }
+  
+   function moveTest(){
+	   a=setInterval('imgMove()', 100)
+   }
+   
+   function stopTest(){
+	   clearTimeout(a)
+   }
+</script>
+</head>
+<body>
+
+<input type="button" value="움직이기" onclick="moveTest()">
+<input type="button" value="멈추기" onclick="stopTest()">
+
+<img src="img/cat.gif" >
+</body>
+</html>

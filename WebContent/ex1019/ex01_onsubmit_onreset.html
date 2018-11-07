@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+   <script>
+      function check(th){//form객체
+    	   if(th.name.value==""){
+    		    alert("이름을 입력해주세요.")
+    		    th.name.focus();
+    		    return false;
+    	   }
+      
+           if(th.id.value==""){
+        	   alert("아이디를 입력해주세요.");
+        	   th.id.focus();
+        	   return false;
+           }
+      
+      }
+      
+      /*
+       버튼 클릭했을때 유효성 체크하고 전송하기
+      */
+      function btnCheck(){
+    	  //유효성체크
+    	  if(document.f.id.value==""){
+    		  alert("아이디를 입력해.");
+    		  document.f.id.focus();
+    		  return;
+    	  }
+    	  
+    	  //전송의 되는 action을 변경!!!
+    	 // document.f.action="http://www.naver.com";
+    	  document.f.action="../index.html";
+    	  
+    	  //폼을 전송하기
+    	  document.f.submit();//전송!!
+    	  
+    	  //location.href="http://www.naver.com"
+    	  
+      }
+   </script>
+ </head>
+
+ <body>
+ <h2> onsubmit 이벤트 </h2>
+ <form name="f" action="http://www.daum.net"  onsubmit="return check(this)" 
+    onreset="alert('reset 눌렸네..')">
+    이름 : <input type="text" name="name"/> <br>
+	아이디 : <input type="text" name="id"/> <br>
+	비번 : <input type="text" name="pwd"/> <br>
+
+	<input type="submit" value="전송"  />
+	<input type="reset" value="취소" />
+	<input type="button" value="전송하기"  onclick="btnCheck()"/>
+ </form>
+ 
+ <a href="#" onclick="btnCheck()">클릭1!</a><p>
+ <a href="javascript:btnCheck()">클릭2!</a><p>
+ 
+ 
+ <img src="" onclick="">
+  
+ </body>
+</html>
+
+
+

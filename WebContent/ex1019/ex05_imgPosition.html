@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html onclick="imgMove()" onmousemove="imgMove()">
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+  img{position:absolute;top:100px; left:50px}
+</style>
+<script>
+  function imgMove(){
+	  //마우스의 좌표 가져오기
+	  var x = event.clientX;
+	  var y = event.clientY;
+	  //console.log(x+" , " + y);
+	  
+	  document.getElementById("img").style.left = x+"px";
+	  document.getElementById("img").style.top = y+"px";
+  }
+</script>
+</head>
+<body>
+<img src="img/dog.gif" id="img"/>
+<h1>안녕하세요</h1>
+
+</body>
+</html>

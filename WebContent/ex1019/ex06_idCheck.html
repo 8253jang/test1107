@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>New Web Project</title>
+		<script type="text/javascript">
+		  function idResult(){
+			  //id의 값을 부모창(opener)에 넣는다.
+		  // opener.document.member.id.value = document.f.id.value;
+			  
+			  //현재창을 닫기
+			 // self.close();
+			  
+			  ////////////////////////////////////////
+			  //1. ex08_MainFrame.html문서에서 iframe 실습인경우 
+			  // 현재창의 id의 값은 메인창의 iframe 영역에 넣기
+			  //top.secondFrame.document.member.id.value  = document.f.id.value;
+		       top.secondFrame.location.href="http://www.daum.net";
+		  }
+		</script>
+		
+	</head>
+	<body>
+	<form name="f">
+	  <table>
+	  	<tr>
+	  		<th colspan="2" bgcolor="yellow"> ID 중복 체크 </th>
+	  	</tr>
+	  	<tr>
+	  		<th>ID</th>
+	  		<td>
+	  			<input type="text" name="id" />
+	  			<input type="button" value="사용하기" onclick="idResult()" />
+	  		</td>
+	  	</tr>  	
+	  </table>
+	 </form>	
+	</body>
+</html>
+
